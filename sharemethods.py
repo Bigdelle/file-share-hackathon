@@ -20,5 +20,4 @@ def upload_to_bucket(blob_name, file_path, bucket_name):
         return
 
 
-
 upload_to_bucket('a1app.py', '/Users/bbigdelle/Documents/GitHub/file-share-hackathon/files/a1app.py', my_bucket)
