@@ -62,7 +62,7 @@ def upload_ask():
                 sharemethods.create_url(bucket, blob, folder_name)
             else:
                 sharemethods.create_url(bucket, blob, '')
-            sharemethods.upload_to_bucket(folder_name+'/'+blob, path, bucket)
+            sharemethods.upload_to_bucket(os.path.join(folder_name, blob), path, bucket)
         except Exception as e:
             print('Error when uploading. Make sure info is correct and try again.')
             upload_ask()
@@ -75,11 +75,18 @@ def download_ask():
         bucket = input('From which bucket? ')
         print()
         #try to show the buckets and available files in each
+        folder = input('Is this in another folder? y/n ')
+        #define directory variable for possible subdirectory
+        directory = ''
+        if folder=="y":
+            print()
+            directory = input('What is the path to the folder? ')
+        print()
         file = input('Which file would you like to download? ')
         print()
         #make sure format is right
         path = input('Which directory would you like to download the file to? ')
         print()
-        sharemethods.download_files(file, os.path.join(path, file), bucket)
+        sharemethods.download_files(os.path.join(directory, file), os.path.join(path, file), bucket)
 
 upload_ask()
