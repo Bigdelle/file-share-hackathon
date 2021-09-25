@@ -7,15 +7,17 @@ storage_client = storage.Client()
 
 dir(storage_client)
 
+
 """Creating a Bucket"""
-bucket_name = 'file-share-bucket_bigredhacks'
-bucket = storage_client.bucket(bucket_name)
-bucket.location = 'US'
-bucket = storage_client.create_bucket(bucket)
+def create_bucket(bucket_name1):
+    bucket_name = bucket_name1
+    bucket = storage_client.bucket(bucket_name)
+    bucket.location = 'US'
+    bucket = storage_client.create_bucket(bucket)
 
 
 """Printing bucket information"""
-vars(bucket)
+#vars(bucket)
 
 """Accessing specific bucket"""
 
