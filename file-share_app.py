@@ -3,13 +3,12 @@ import sharemethods
 import os
 from google.cloud import storage
 
-# things to do 
+# FILE SHARE VIRTUAL ENV CALLED file-share
 """
-1. Add user input so someone can tell you which file, which file to put it in,
-if they want to create a new bucket
+To Run:
 
-2. Add simple UI so you can upload files through flask or something,
-and it goes into the "to upload" folder
+Start virtual envinroment through source file-share/bin/activate
+Start flask through flask run
 
 """
 
